@@ -92,6 +92,7 @@ Please note, it is advisable to approach listening with caution, particularly wh
 [Click here to visit our demo website](https://aleksandarilievski.github.io/voice-conversion/)
 
 ## Sources
+Our project's foundation is built upon the work done in the soft-vc repository as well as the [Medium article by Piero Esposito](https://towardsdatascience.com/building-a-lstm-by-hand-on-pytorch-59c02a4ec091), which served as the initial codebase for our voice conversion model. Additionally, we've explored other resources that implement similar voice conversion approaches, enriching our understanding and capabilities in the domain. These resources have provided us with various perspectives and techniques that complement our primary framework.
 - **soft-vc**: A voice conversion model utilizing a soft attention mechanism, created by bshall. This repository contains tools and pre-trained models for voice conversion. Available at: <https://github.com/bshall/soft-vc>
 - **knn-vc**: Implements a k-nearest neighbors approach to voice conversion, also developed by bshall. It showcases an alternative method using non-parallel data. Available at: <https://github.com/bshall/knn-vc>
 - **AutoVC**: A repository by auspicious3000, featuring an Autoencoder for Voice Conversion. It demonstrates a method for disentangling speaker characteristics from linguistic content. Available at: <https://github.com/auspicious3000/autovc>
