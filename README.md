@@ -14,6 +14,16 @@ Welcome to VoxShift, a university project at KIT that delves into the fascinatin
 
 ## Quick Start Guide
 
+We have run all our notebooks in Google Colab. To run them yourself, do the following:
+- Access our [Google Drive folder](https://drive.google.com/drive/folders/1V36Ga7vsziCFcNr6wsyagdREbVFFMUI4?usp=sharing) which also contains all our code, as well as the VCTK dataset and model checkpoints. This puts our shared folder (the VC folder) into the "Shared with me" section of your Google Drive.
+- Create a shortcut of the VC folder in the root of your Google Drive to ensure that everything loads correctly inside our notebooks (we mount Google Drive inside the notebook). See also [this](https://stackoverflow.com/questions/54351852/accessing-shared-with-me-with-colab) StackOverflow question.
+- When mounting your Google Drive inside a notebook, make sure to check the boxes to grant colab permission to access your drive files.
+
+For a quick test of training and evaluation, run the `Training.ipynb` and `Evaluation.ipynb` notebooks. 
+
+For a deeper dive check out the README.md inside out Google Drive folder.
+
+If you want to run our notebooks locally, take this GitHub repository as a starting point. The Dataset is only available in the Google Drive folder, but you can use our data preparation scripts to prepare the data. You might also have to adjust the code and paths to load data or checkpoints.
 
 ## Dataset
 For our project's training phase, we utilized the Voice Cloning Toolkit (VCTK) Dataset, courtesy of the Centre for Speech Technology Research at the University of Edinburgh. This dataset is well-suited for voice conversion endeavors but equally valuable for other research areas such as speaker identification, text-to-speech synthesis, and accent recognition. Comprising parallel data, the VCTK dataset ensures each speaker contributes a distinct set of newspaper sentences. These sentences were meticulously selected through a greedy algorithm to maximize contextual and phonetic diversity, enabling comprehensive coverage across various voice conversion scenarios.
