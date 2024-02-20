@@ -13,7 +13,7 @@ Welcome to VoxShift, a university project at KIT that delves into the fascinatin
 - :books: [Sources](#sources)
 
 ## Quick Starting Guide
-Our code has been developed and tested in Google Colab. For an efficient start, please access our Google Drive folder where all scripts and prepared data is stored:
+Our code has been developed, tested and optimized for Google Colab. For an efficient start, please access our Google Drive folder where all scripts and prepared data is stored:
 
 1. Access and create a shortcut of [the VC folder from our Google Drive](https://drive.google.com/drive/folders/1V36Ga7vsziCFcNr6wsyagdREbVFFMUI4?usp=sharing) to your drive's root for compatibility (Help from [StackOverflow](https://stackoverflow.com/questions/54351852/accessing-shared-with-me-with-colab)).
 2. Ensure to grant Colab permissions to access Drive files when prompted during mounting (click checkboxes).
