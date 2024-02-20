@@ -4,7 +4,7 @@ Welcome to VoxShift, a university project at KIT that delves into the fascinatin
 
 
 ## Table of Contents
-- :rocket: [Quick Start Guide](#quick-start-guide)
+- :rocket: [Quick Starting Guide](#quick-starting-guide)
 - :floppy_disk: [Dataset](#dataset)
 - :building_construction: [Model Architecture](#model-architecture)
 - :weight_lifting_man: [Training](#training)
@@ -12,7 +12,7 @@ Welcome to VoxShift, a university project at KIT that delves into the fascinatin
 - :headphones: [Demo](#demo)
 - :books: [Sources](#sources)
 
-## Quick Start Guide
+## Quick Starting Guide
 Our code has been developed and tested in Google Colab. For an efficient start, please access our Google Drive folder where all scripts and prepared data is stored:
 
 1. Access and create a shortcut of [the VC folder from our Google Drive](https://drive.google.com/drive/folders/1V36Ga7vsziCFcNr6wsyagdREbVFFMUI4?usp=sharing) to your drive's root for compatibility (Help from [StackOverflow](https://stackoverflow.com/questions/54351852/accessing-shared-with-me-with-colab)).
