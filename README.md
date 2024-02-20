@@ -10,6 +10,7 @@ Welcome to VoxShift, a university project at KIT that delves into the fascinatin
 - [Training](#training)
 - [Results](#results)
 - [Demo](#demo)
+- [Sources](#sources)
 
 ## Quick Start Guide
 
@@ -21,8 +22,23 @@ For our project's training phase, we utilized the Voice Cloning Toolkit (VCTK) D
 
 
 ## Model Architecture
+In developing VoxShift, we leveraged the versatility of the VCTK dataset, which provides us with the unique opportunity to explore both parallel and non-parallel training approaches. Parallel Training involves utilizing audio recordings that have identical linguistic content but are spoken by different individuals. This method focuses on mapping the source to the target spectrogram, necessitating temporal alignment to ensure the accuracy of the voice conversion. Non-Parallel Training, on the other hand, employs a more flexible approach. By autoencoding, the model reconstructs the Mel-Spectrogram directly from embeddings, eliminating the need for parallel data. This method does not rely on having two sets of the same spoken content by different speakers, making it significantly more versatile and suited to a wider range of applications. Given the challenges inherent in sourcing parallel training data, we opted for the a non-parallel approach. Non-parallel training stands at the forefront of voice conversion research due to its ability to navigate the absence of parallel data — a common hurdle in the field. This method not only aligns with the state-of-the-art in voice conversion technology but also presents an intriguing avenue for research, offering insights into more dynamic and adaptive model architectures.
+
+A typical model architecture in this domain may incorporate various embeddings to capture the nuances of speech, including:
+- Linguistic Embeddings: These encode the textual or phonetic aspects of speech, capturing the content without being influenced by the speaker's unique vocal characteristics.
+- Speaker Embeddings: Focus on capturing the unique vocal traits of the speaker, allowing the model to maintain or change the speaker identity in the voice conversion process.
+- Prosodic Embeddings: These are used to encapsulate the rhythm, stress, and intonation patterns of speech, contributing to the naturalness and expressiveness of the converted voice.
+
+For VoxShift, we decided to streamline our model by not utilizing prosodic embeddings. This decision was made to reduce complexity and focus our efforts on mastering the core aspects of voice conversion — linguistic and content integrity. By simplifying our model, we aim to achieve a balance between performance and computational efficiency, making VoxShift a robust yet accessible tool for exploring voice conversion technologies.
+
 <img width="1846" alt="Bildschirm­foto 2024-02-20 um 13 58 18" src="https://github.com/AleksandarIlievski/voice-conversion/assets/75620360/3cf4a2a4-353e-4505-a158-d0e33b3bcebd">
+
+Continuing from our approach, we integrated two pretrained models to harness linguistic and speaker embeddings. HuBERT Soft, utilized for its linguistic embeddings, is pretrained on a diverse set of unlabeled audio, enabling the extraction of nuanced linguistic patterns crucial for voice conversion. For speaker characteristics, we leveraged WavLM, which excels in identifying vocal traits across languages and accents, due to its training on a wide-ranging speech corpus. Complementing these, our architecture incorporates HiFi-GAN, a vocoder trained on the LJSpeech dataset, chosen for its ability to produce high-fidelity speech from Mel spectrograms. The integration and final audio synthesis are achieved through a custom-implemented decoder, designed to merge linguistic and speaker embeddings effectively.
+
 <img width="1872" alt="Bildschirm­foto 2024-02-20 um 14 03 14" src="https://github.com/AleksandarIlievski/voice-conversion/assets/75620360/ee99178d-4f90-4e04-a1ea-6c0a8fbcd6da">
+
+Building upon our model's foundation, the decoder is structured as a sequence-to-sequence model. At its core, the encoder segment harnesses 1D convolutional layers, specifically tasked with handling the linguistic embeddings derived from HuBERT Soft. This processed output is then concatenated with the speaker embeddings from WavLM, forming a representation of both linguistic content and speaker identity. This is fed into the decoder segment, which is designed with three LSTM layers. These layers are pivotal in managing sequential data, ensuring that the temporal dynamics of speech are captured and accurately reproduced in the conversion process. An additional enhancement to this architecture is the inclusion of a PreNet. This component takes the target Mel spectrogram and subjects it to a series of linear layers. The PreNet acts as a form of teacher forcing, directly influencing the model with actual output data to refine its predictions, and it injects additional contextual information into the system.
+
 <img width="1814" alt="Bildschirm­foto 2024-02-20 um 14 03 28" src="https://github.com/AleksandarIlievski/voice-conversion/assets/75620360/53c1c507-1592-4798-9a24-d5118949478e">
 
 ## Training
@@ -47,6 +63,11 @@ For our project's training phase, we utilized the Voice Cloning Toolkit (VCTK) D
 ### Influence of Target Audio Length on Basemodel Performance
 <img width="584" alt="Bildschirm­foto 2024-02-20 um 14 10 44" src="https://github.com/AleksandarIlievski/voice-conversion/assets/75620360/7f9f0bf2-a195-4290-89f9-0915be7851f1">
 
-
 ## Demo
 [Click here to visit our website](https://aleksandarilievski.github.io/voice-conversion/)
+
+## Sources
+AutoVC: Autoencoder
+FastVC: Autoencoder with PostNet
+kNN-VC: kNN-Regression as Decoder
+Soft-VC: Any-to-One
