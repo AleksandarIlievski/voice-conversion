@@ -4,13 +4,13 @@ Welcome to VoxShift, a university project at KIT that delves into the fascinatin
 
 
 ## Table of Contents
-- [Quick Start Guide](#quick-start-guide)
-- [Dataset](#dataset)
-- [Model Architecture](#model-architecture)
-- [Training](#training)
-- [Results](#results)
-- [Demo](#demo)
-- [Sources](#sources)
+- :rocket: [Quick Start Guide](#quick-start-guide)
+- :floppy_disk: [Dataset](#dataset)
+- :building_construction: [Model Architecture](#model-architecture)
+- :weight_lifting_man: [Training](#training)
+- :bar_chart: [Results](#results)
+- :headphones: [Demo](#demo)
+- :books: [Sources](#sources)
 
 ## Quick Start Guide
 
