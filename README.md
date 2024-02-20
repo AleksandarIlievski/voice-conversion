@@ -52,20 +52,36 @@ In our training regimen, a crucial aspect was establishing a robust train-valida
 
 
 ## Results
+In assessing the performance of our voice conversion model, we employed three key metrics:
+
+- Word Error Rate (WER): This metric is derived from automatic speech recognition (ASR) and involves comparing the ASR transcript of the converted audio against the ground truth text of the source audio. WER is calculated as the number of insertions, deletions, and substitutions made by the ASR system, normalized by the number of words in the ground truth. It ranges from 0 to 1, where 0 indicates a perfect transcription with no errors.
+- Speaker Similarity (Sim): We measured the speaker similarity by computing the cosine similarity between the speaker embeddings of the converted audio and the target audio. The cosine similarity is a value between -1 and 1, where 1 signifies perfect similarity, 0 indicates no similarity, and -1 represents perfect dissimilarity.
+- Mean Opinion Score (MOS): For the subjective evaluation of audio quality, we used the Mean Opinion Score, which reflects human judgments of the converted audio's quality. Participants rate the quality on a scale from 1 to 5, with 5 being the highest quality. In addition to MOS, we also employed Speaker Mean Opinion Score (SMOS) to rate the similarity of speaker identity between the source and target audio.
+  
+These metrics provided us with a comprehensive understanding of our model's performance, evaluating both the objective accuracy of voice conversion and the subjective quality as perceived by human listeners.
+
 ### Base Model Performance Evaluation
+For our baseline model, the initial expectation was a potential overfit as the training progressed. Contrary to this, the validation loss continued to converge, suggesting that the model was learning generalizable patterns rather than memorizing the training data. However, to specifically account for the model's performance on unseen speakers, we altered our validation approach. By evaluating solely on unseen speakers, the validation loss exhibited an increase, indicating that while the model was adept at handling seen speakers, its performance on any-to-any voice conversion was less robust.
+
 <img width="1792" alt="Bildschirm­foto 2024-02-20 um 14 15 42" src="https://github.com/AleksandarIlievski/voice-conversion/assets/75620360/d272031c-6ab8-49fa-ba8c-6a0d2dafb10a">
-
-
 <img width="413" alt="Bildschirm­foto 2024-02-20 um 14 09 57" src="https://github.com/AleksandarIlievski/voice-conversion/assets/75620360/bb6c23ef-d512-4ed3-9829-822877f93c9e">
 
 ### Ablations Performance Evaluation
+In our ablation study, we incrementally introduced components to the baseline model and observed their impact on performance. First, we incorporated dropout to mitigate overfitting, ensuring the model's generalizability. Next, we increased the hidden dimension of the LSTM layers, which enhanced the model's capacity for the more complex any-to-any voice conversion task. Finally, we added a PostNet module, which further refined the generated Mel-Spectrogram, resulting in improved audio quality. Each step was methodically assessed to measure its contribution to the overall efficacy of the model. 
+
+The ablation study yielded the following key insights: Introducing additional dropout to the model led to improved Word Error Rate (WER) for both many-to-many (m2m) and any-to-any (a2a) voice conversion tasks. Expanding the hidden dimension of the LSTM layers resulted in better Speaker Similarity (Sim) scores for both m2m and a2a scenarios. However, the integration of PostNet did not significantly enhance performance, as evidenced by the overall similar metrics before and after its inclusion.
+
 <img width="523" alt="Bildschirm­foto 2024-02-20 um 14 10 07" src="https://github.com/AleksandarIlievski/voice-conversion/assets/75620360/3f4acc87-284a-4ae2-9540-9bc20377916b">
 
 ### Influence of Gender on Basemodel Performance
+Our investigation into the influence of gender on model performance revealed a notable trend: conversions where the target speaker was female generally resulted in higher speaker similarity scores and lower WER scores, suggesting a more accurate capture of vocal characteristics and linguistic content. 
+
 <img width="395" alt="Bildschirm­foto 2024-02-20 um 14 10 27" src="https://github.com/AleksandarIlievski/voice-conversion/assets/75620360/3d95965f-4bc3-4371-83cb-9d6d236bc70a">
 <img width="400" alt="Bildschirm­foto 2024-02-20 um 14 10 34" src="https://github.com/AleksandarIlievski/voice-conversion/assets/75620360/cdfe041f-8780-4711-8dd5-e78b110a7715">
 
 ### Influence of Target Audio Length on Basemodel Performance
+In our final set of experiments, we explored the impact of using more extensive audio inputs for creating speaker embeddings. The 'Base + single' configuration used the baseline model with embeddings from individual audio files. We then experimented with 'Base + window', where the embeddings were derived from concatenated audio sequences, including the target and its adjacent utterances, to form a more comprehensive audio context. This was further extended to 'BaseW + window', where the model was not only tested with windowed embeddings but also trained on them. Lastly, 'BaseA + agg' represented a model that used aggregated embeddings, averaging the embeddings from all utterances for each speaker in the VCTK dataset. The results indicated that using windowed and aggregated strategies for speaker embeddings led to improved Speaker Similarity scores for both many-to-many and any-to-any conversion tasks. However, this was accompanied by a deterioration in Word Error Rate (WER), suggesting that while speaker characteristics were captured more accurately, the intelligibility of the speech in the converted audio was somewhat compromised.
+
 <img width="584" alt="Bildschirm­foto 2024-02-20 um 14 10 44" src="https://github.com/AleksandarIlievski/voice-conversion/assets/75620360/7f9f0bf2-a195-4290-89f9-0915be7851f1">
 
 ## Demo
