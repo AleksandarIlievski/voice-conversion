@@ -17,7 +17,7 @@ Our code has been developed and tested in Google Colab. For an efficient start, 
 
 1. Access and create a shortcut of [the VC folder from our Google Drive](https://drive.google.com/drive/folders/1V36Ga7vsziCFcNr6wsyagdREbVFFMUI4?usp=sharing) to your drive's root for compatibility (Help from [StackOverflow](https://stackoverflow.com/questions/54351852/accessing-shared-with-me-with-colab)).
 2. Ensure to grant Colab permissions to access Drive files when prompted during mounting (click checkboxes).
-3. Begin with Training.ipynb and Evaluation.ipynb for a quick overview.
+3. Begin with Training.ipynb and Evaluation.ipynb in our Google Drive folder for a quick overview.
 4. Consult the README.md in our Drive folder for detailed insights.
 5. For local runs, download the VCTK dataset yourself and utilize our preparation scripts in this GitHub repo. Adjust paths in the code as necessary for local environment compatibility.
 
