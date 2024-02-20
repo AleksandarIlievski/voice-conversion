@@ -31,6 +31,21 @@ For our project's training phase, we utilized the Voice Cloning Toolkit (VCTK) D
 
 
 ## Results
+### Base Model Performance Evaluation
+<img width="1792" alt="Bildschirm­foto 2024-02-20 um 14 15 42" src="https://github.com/AleksandarIlievski/voice-conversion/assets/75620360/d272031c-6ab8-49fa-ba8c-6a0d2dafb10a">
+
+
+<img width="413" alt="Bildschirm­foto 2024-02-20 um 14 09 57" src="https://github.com/AleksandarIlievski/voice-conversion/assets/75620360/bb6c23ef-d512-4ed3-9829-822877f93c9e">
+
+### Ablations Performance Evaluation
+<img width="523" alt="Bildschirm­foto 2024-02-20 um 14 10 07" src="https://github.com/AleksandarIlievski/voice-conversion/assets/75620360/3f4acc87-284a-4ae2-9540-9bc20377916b">
+
+### Influence of Gender on Basemodel Performance
+<img width="395" alt="Bildschirm­foto 2024-02-20 um 14 10 27" src="https://github.com/AleksandarIlievski/voice-conversion/assets/75620360/3d95965f-4bc3-4371-83cb-9d6d236bc70a">
+<img width="400" alt="Bildschirm­foto 2024-02-20 um 14 10 34" src="https://github.com/AleksandarIlievski/voice-conversion/assets/75620360/cdfe041f-8780-4711-8dd5-e78b110a7715">
+
+### Influence of Target Audio Length on Basemodel Performance
+<img width="584" alt="Bildschirm­foto 2024-02-20 um 14 10 44" src="https://github.com/AleksandarIlievski/voice-conversion/assets/75620360/7f9f0bf2-a195-4290-89f9-0915be7851f1">
 
 
 ## Demo
