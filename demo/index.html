@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <style>
+        body {
+            color: var(--text);
+            background-color: var(--bg);
+            font-size: 1.15rem;
+            line-height: 1.5;
+            display: grid;
+            grid-template-columns: 1fr max(45rem, 90%) 1fr;
+            margin: 0
+        }
+    </style>
+    <title>VoxShift Demo</title>
+</head>
+
+<body>
+    <h1>VoxShift Demo</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Source Audio</th>
+                <th>Target Audio</th>
+                <th>Conversion Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Many-to-Many</td>
+                <td><audio src="demo/audios/m2m_top1_1.wav" controls></audio></td>
+                <td><audio src="demo/audios/m2m_top1_2.wav" controls></audio></td>
+                <td><audio src="demo/audios/m2m_top1_3.wav" controls></audio></td>
+            </tr>
+            <tr>
+                <td>Many-to-Many</td>
+                <td><audio src="demo/audios/m2m_top2_1.wav" controls></audio></td>
+                <td><audio src="demo/audios/m2m_top2_2.wav" controls></audio></td>
+                <td><audio src="demo/audios/m2m_top2_3.wav" controls></audio></td>
+            </tr>
+            <tr>
+                <td>Many-to-Many</td>
+                <td><audio src="demo/audios/m2m_top3_1.wav" controls></audio></td>
+                <td><audio src="demo/audios/m2m_top3_2.wav" controls></audio></td>
+                <td><audio src="demo/audios/m2m_top3_3.wav" controls></audio></td>
+            </tr>
+            <tr>
+                <td>Many-to-Many</td>
+                <td><audio src="demo/audios/m2m_top4_1.wav" controls></audio></td>
+                <td><audio src="demo/audios/m2m_top4_2.wav" controls></audio></td>
+                <td><audio src="demo/audios/m2m_top4_3.wav" controls></audio></td>
+            </tr>
+            <tr>
+                <td>Many-to-Many</td>
+                <td><audio src="demo/audios/m2m_top5_1.wav" controls></audio></td>
+                <td><audio src="demo/audios/m2m_top5_2.wav" controls></audio></td>
+                <td><audio src="demo/audios/m2m_top5_3.wav" controls></audio></td>
+            </tr>
+            <tr>
+                <td>Any-to-Any</td>
+                <td><audio src="demo/audios/a2a_top1_1.wav" controls></audio></td>
+                <td><audio src="demo/audios/a2a_top1_2.wav" controls></audio></td>
+                <td><audio src="demo/audios/a2a_top1_3.wav" controls></audio></td>
+            </tr>
+            <tr>
+                <td>Any-to-Any</td>
+                <td><audio src="demo/audios/a2a_top2_1.wav" controls></audio></td>
+                <td><audio src="demo/audios/a2a_top2_2.wav" controls></audio></td>
+                <td><audio src="demo/audios/a2a_top2_3.wav" controls></audio></td>
+            </tr>
+            <tr>
+                <td>Any-to-Any</td>
+                <td><audio src="demo/audios/a2a_top3_1.wav" controls></audio></td>
+                <td><audio src="demo/audios/a2a_top3_2.wav" controls></audio></td>
+                <td><audio src="demo/audios/a2a_top3_3.wav" controls></audio></td>
+            </tr>
+            <tr>
+                <td>Any-to-Any</td>
+                <td><audio src="demo/audios/a2a_top4_1.wav" controls></audio></td>
+                <td><audio src="demo/audios/a2a_top4_2.wav" controls></audio></td>
+                <td><audio src="demo/audios/a2a_top4_3.wav" controls></audio></td>
+            </tr>
+            <tr>
+                <td>Any-to-Any</td>
+                <td><audio src="demo/audios/a2a_top5_1.wav" controls></audio></td>
+                <td><audio src="demo/audios/a2a_top5_2.wav" controls></audio></td>
+                <td><audio src="demo/audios/a2a_top5_3.wav" controls></audio></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
